@@ -1,0 +1,60 @@
+/* Estilos personalizados para mejorar la tabla */
+
+/* Estilo general para centrar el contenido */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor de la tabla */
+.container {
+  padding: 20px;
+}
+
+/* Estilo para la tabla */
+.table {
+  table-layout: auto; /* Asegura que las columnas sean responsivas */
+  word-wrap: break-word; /* Evita desbordamientos */
+}
+
+.table th, 
+.table td {
+  text-align: center; /* Centra el texto dentro de las celdas */
+  vertical-align: middle; /* Centra verticalmente */
+}
+
+/* Estilo para el encabezado de la tabla */
+.table thead th {
+  background-color: #343a40;
+  color: white;
+  font-weight: bold;
+}
+
+/* Asegura que las columnas no sean demasiado grandes en pantallas pequeñas */
+.table td, 
+.table th {
+  max-width: 200px; /* Limita el ancho máximo */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Muestra puntos suspensivos si el contenido es demasiado largo */
+}
+
+/* Estilo responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .table {
+    font-size: 14px; /* Reduce el tamaño de fuente */
+  }
+
+  .table td, 
+  .table th {
+    max-width: 150px; /* Reduce el ancho máximo */
+  }
+}
+
+/* Estilo para el título */
+h1 {
+  text-align: center;
+  color: #343a40;
+  margin-bottom: 20px;
+}
