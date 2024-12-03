@@ -54,9 +54,6 @@
 
               columns.forEach((column, index) => {
                 const newCell = document.createElement('td');
-				
-				// Decodificar caracteres especiales si los hay
-                const content = decodeURIComponent(escape(column.trim()));
 
                 // Si estamos en la columna de enlaces, creamos un hipervínculo
                 if (index === 2) { // Suponiendo que la columna 2 es el enlace
