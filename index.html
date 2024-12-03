@@ -44,8 +44,6 @@
           return response.text();
         })
         .then(data => {
-          console.log("Contenido del CSV:", data); // Depuración
-          
           const rows = data.split('\n');
           rows.shift(); // Eliminamos la primera fila (encabezados)
 
@@ -56,19 +54,19 @@
 
               columns.forEach((column, index) => {
                 const newCell = document.createElement('td');
-
-                // Decodificar caracteres especiales si los hay
+				
+				// Decodificar caracteres especiales si los hay
                 const content = decodeURIComponent(escape(column.trim()));
 
                 // Si estamos en la columna de enlaces, creamos un hipervínculo
                 if (index === 2) { // Suponiendo que la columna 2 es el enlace
                   const link = document.createElement('a');
-                  link.href = content;
+                  link.href = column.trim();
                   link.textContent = 'Ir al enlace';
                   link.target = '_blank'; // Abre el enlace en una nueva pestaña
                   newCell.appendChild(link);
                 } else {
-                  newCell.textContent = content;
+                  newCell.textContent = column.trim();
                 }
 
                 newRow.appendChild(newCell);
@@ -88,4 +86,3 @@
   </script>
 </body>
 </html>
-
